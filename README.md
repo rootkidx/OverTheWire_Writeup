@@ -41,7 +41,7 @@ ssh bandit0@bandit.labs.overthewire.org -p 2220
 
 เมื่อ ls -al จะเจอไฟล์ - (dashed file)
 
-![](https://lh5.googleusercontent.com/GKmF2KQ75XmzeX212uo89CbSVAGlOHps6qEx3U1F9Co7xCCZNf4rIsDKYycR64sETd2WKPUetwcLfokQPHDCzBAkux7yz8EWsbkz9EAKMKZZVNnarLoFktSuuPHvQe0cDIQ8mmAyzWF2pcy7s56FRjpngm6A9W1vEvJQHjRRXvMI7SRXSJvKdd5hHw)
+<figure><img src="https://lh5.googleusercontent.com/GKmF2KQ75XmzeX212uo89CbSVAGlOHps6qEx3U1F9Co7xCCZNf4rIsDKYycR64sETd2WKPUetwcLfokQPHDCzBAkux7yz8EWsbkz9EAKMKZZVNnarLoFktSuuPHvQe0cDIQ8mmAyzWF2pcy7s56FRjpngm6A9W1vEvJQHjRRXvMI7SRXSJvKdd5hHw" alt=""><figcaption></figcaption></figure>
 
 เนื่องจากเป็น dashed file จึงไม่สามารถใช้คำสั่ง&#x20;
 
@@ -55,6 +55,6 @@ ssh bandit0@bandit.labs.overthewire.org -p 2220
 cat < -
 ```
 
-![](https://lh5.googleusercontent.com/2CMbvMdBBhgMtH7FFTLYoLbH1j3\_62e2gKASBt4AYAVPNphLiIB7kO2DGRRTCgewYBkyS149zk5pYqroN2bKmpFf\_mTbTR6R10Qg231K1nVFFa-Hw9wtDXVvf0a9pfifgQrOuZvY-5paRXpatQ-viaTwLO-rkyl51Hx5gJPWOW5eSmz73Q2\_mZhC5A)
+<figure><img src="https://lh5.googleusercontent.com/2CMbvMdBBhgMtH7FFTLYoLbH1j3_62e2gKASBt4AYAVPNphLiIB7kO2DGRRTCgewYBkyS149zk5pYqroN2bKmpFf_mTbTR6R10Qg231K1nVFFa-Hw9wtDXVvf0a9pfifgQrOuZvY-5paRXpatQ-viaTwLO-rkyl51Hx5gJPWOW5eSmz73Q2_mZhC5A" alt=""><figcaption></figcaption></figure>
 
 ก็จะได้ password ออกมาแล้ว ว้าวว สุดยอดไปเลยย!!!!
