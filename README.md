@@ -7,7 +7,7 @@ description: >-
 
 # OverTheWire\[Bandit] Writeup
 
-## Level 0
+## :triangular\_flag\_on\_post: Level 0
 
 คือการ ssh เข้าไปยัง server **bandit.labs.overthewire.org** port **2220** โดยใช้ username bandit0 และ password bandit0
 
@@ -19,7 +19,7 @@ ssh bandit0@bandit.labs.overthewire.org -p 2220
 
 <figure><img src="https://lh3.googleusercontent.com/Bltaxaw6LHUG5CDb14P0nSJOYZEPJYsjOP-RsCdIBtPKV9VYSFYyG7k70SRWTWZNl9vpQwKbR-soef4yKSsu5MzV5hewaJcb3d5kqkz-9QtW7-sb3DsuB5o7ZfoousN6SnaClxyn-YnSjqhJKgIeI3qcr3PrPgvu8HB7cZw6uGYxL37rH49ZGG4K9A" alt=""><figcaption></figcaption></figure>
 
-## Level 0->1
+## :triangular\_flag\_on\_post: Level 0-1
 
 เมื่อเข้าไปยังserver แล้ว ให้ใช้ command ls -al เพื่อดูว่ามี file อะไรบ้าง
 
@@ -35,7 +35,7 @@ ssh bandit0@bandit.labs.overthewire.org -p 2220
 
 เข้าได้แล้ว เย้!!!!!
 
-## Level 1->2
+## :triangular\_flag\_on\_post: Level 1-2
 
 > **Password : NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL**
 
@@ -46,7 +46,7 @@ ssh bandit0@bandit.labs.overthewire.org -p 2220
 เนื่องจากเป็น dashed file จึงไม่สามารถใช้คำสั่ง&#x20;
 
 ```
- cat -
+cat -
 ```
 
 ให้เราใช้
