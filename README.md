@@ -198,3 +198,160 @@ cat data.txt | base64 --decode
 ```
 
 <figure><img src="https://lh6.googleusercontent.com/epxsc9ZCpO9NEPBnslqs4LrFhhdx1lNSRiJgreamOCJn0RT5uTgXtcNbKAqlwlaLCcMVTuNarzfKY9mUJBnOH4ARJEH4J9eNCnWU390CGYFr_ZDldRcre3RAbM2l96wAfJP_MjoK8KZyQaV3cdzUUwN3llj-W36YuBiY9ZbWb3Esc6_NrQEHD66D-w" alt=""><figcaption></figcaption></figure>
+
+## :triangular\_flag\_on\_post: Level 11-12
+
+> **Password : 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM**
+
+เมื่อเรา cat file data.txt จะเจอ strings ที่ encode ด้วยrot13&#x20;
+
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+ซึ่งก็คือการshiftตัวอักษรไป13ครั้ง ดั้งนั้นเราก็ต้องเลื่อนกลับมา13ครั้งเพื่อให้ได้passwordที่เราต้องการ
+
+```
+cat data.txt | tr '[a-z][A-Z]' '[n-za-m][N-ZA-M]'
+```
+
+<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+
+
+## :triangular\_flag\_on\_post: Level 12-13
+
+> **Password : JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv**
+
+ในข้อนี้  data.txt ที่เขาให้มาเป็นเป็นไฟล์ hexdump ซึ่งเราจะต้อง reverse มันออกมา&#x20;
+
+```
+xxd -r data.txt > data1
+```
+
+เมื่อใช้คำสั่ง file เพื่อดูว่า data1 คือไฟล์อะไร จะเห็นได้ว่ามันคือไฟล์ .gzip
+
+<figure><img src=".gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+ให้เราทำการแปลง data1 -> data1.gz
+
+```
+mv data1 data1.gz
+```
+
+หลังจากนั้นแตกไฟล์มันออกมา
+
+```
+gunzip data1.gz
+```
+
+จะได้ data1 ที่เป็นไฟล์ .bzip
+
+<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+ให้แตกไฟล์ bzip ออกมา จะได้ไฟล์ที่เป็น gzip
+
+```
+bzip2 -d data1
+```
+
+ให้เราแปลงไฟล์ที่ได้มาจากการแตก bzip ให้เป็น .gz หลังจากนั้นให้แตกไฟล์ออกมา จะได้เป็นไฟล์ .tar
+
+<figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+ให้เราแตกไฟล์ .tar ด้วยคำสั่งด้านล่างนี้ จะได้ไฟล์ที่ชื่อว่า data5.bin
+
+```
+tar -xvf data3
+```
+
+เมื่อใช้คำสั่ง file ดู file data5.bin พบว่าเป็นไฟล์ tar เหมือนกัน ดังนั้นก็ใช้คำสั่งเดิมในการแตกไฟล์มันออกมา ก็จะได้ไฟล์ data6.bin หลังจากนั้นใช้คำสั่ง file เพื่อดูว่าfile data6.bin คือ file อะไร ซึ่งคำตอบก็ไฟล์ bzip นั่นเอง&#x20;
+
+<figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+เมื่อแตกไฟล์ data6 ออกมา ก็จะได้ ไฟล์ data6 ที่เป็น .tar ให้แตกไฟล์ data6.tar ก็จะได้ data8.bin ซึ่งจริงๆมันคือfile gzip&#x20;
+
+<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+เราก็ต้องแปลงจาก .bin -> .gz
+
+```
+ mv data8.bin data8.gz
+```
+
+แล้วก็แตกไฟล์มันออกมา จะได้เป็นไฟล์ data8 ที่เป็น ASCII Text
+
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+ขั้นตอนสุดท้ายคือการ cat file data8 เราก็จะได้ password ที่เราต้องการแล้ว เย้ยยยยยย:tada:
+
+<figure><img src=".gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+
+## :triangular\_flag\_on\_post: Level 13-14
+
+> **Password : wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw**
+
+ในข้อนี้เราจะไม่ได้ password แต่เราจะต้อง get private SSH key ออกมา เพื่อนำไปเข้า user bandit14
+
+ซึ่งเมื่อเรา SSH เข้ามาด้วย bandit13 เราจะเจอไฟล์ sshkey.private
+
+<figure><img src=".gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+
+ให้เรา get มันออกมากด้วยการออกไปยังเครื่องเราก่อน แล้วใช้คำสั่ง
+
+```
+scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .
+```
+
+หลังจากนั้นให้เราทำการ login ด้วย bandit14 แล้วใช้ key เมื่อกี้แทน password&#x20;
+
+```
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+```
+
+จะเห็นว่ามันเข้าไม่ได้ เพราะ permission ของ key ตัวนี้มัน open เกินไป&#x20;
+
+<figure><img src=".gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+ให้เราแก้ไข permission โดยในที่นี้จะใช้เป็น 600 ด้วยคำสั่ง&#x20;
+
+```
+chmod 600 sshkey.private
+```
+
+หลังจากนั้นก็ให้ลองเข้าใหม่ จะเห็นว่าเข้าได้แล้วววววว
+
+<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+ซึ่งโจทย์บอกว่า password อยู่ใน **/etc/bandit\_pass/bandit14** ดังนั้นให้เรา cat ออกมา ก็จะได้ password แล้ว
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+## :triangular\_flag\_on\_post: Level 14-15
+
+> Password : fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+
+ในข้อนี้โจทย์บอกว่า password สำหรับข้อถัดไปอยู่ที่ port 30000 บน localhost
+
+```
+nc localhost 30000
+```
+
+เมื่อเข้าไปแล้วก็จะเจอ password สำหรับข้อถัดไปเลย
+
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+## :triangular\_flag\_on\_post: Level 15-16
+
+> Password : jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+
+password อยู่ใน localhost:30001 ให้เราเข้าผ่าน SSL&#x20;
+
+```
+openssl s_client -connect localhost:30001 -quiet
+```
+
+เมื่อเข้าแล้วก็จะเจอ password เลย
+
+<figure><img src=".gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+
+
+
