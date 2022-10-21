@@ -105,7 +105,7 @@ cat spaces\ in\ this\ filename
 
 <figure><img src="https://lh3.googleusercontent.com/tc96ZxP99lMSrUKIUvUmDIkzoqR2xet9EsnMVZ-gLsqguPYGNtD3BEcZ5OEJxe2VrytYUvL4vMemwqSV3F82eMWb5xksySArdvurWKBdj9eufA-QNt2ze2D_y1SeTBKZibMed5xVIFOYj_VPAzmkiqr-ADqWIudGXJKeFfuV8kvjf_O3zPNgUULsOA" alt=""><figcaption></figcaption></figure>
 
-## ****:triangular\_flag\_on\_post: **Level 5-6**
+## ****:triangular\_flag\_on\_post: Level 5-6
 
 > **Password : lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR**
 
