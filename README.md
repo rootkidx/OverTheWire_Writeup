@@ -43,7 +43,7 @@ ssh bandit0@bandit.labs.overthewire.org -p 2220
 
 <figure><img src="https://lh5.googleusercontent.com/GKmF2KQ75XmzeX212uo89CbSVAGlOHps6qEx3U1F9Co7xCCZNf4rIsDKYycR64sETd2WKPUetwcLfokQPHDCzBAkux7yz8EWsbkz9EAKMKZZVNnarLoFktSuuPHvQe0cDIQ8mmAyzWF2pcy7s56FRjpngm6A9W1vEvJQHjRRXvMI7SRXSJvKdd5hHw" alt=""><figcaption></figcaption></figure>
 
-เนื่องจากเป็น dashed file จึงไม่สามารถใช้คำสั่ง&#x20;
+เนื่องจากเป็น dashed file จึงไม่สามารถใช้คำสั่ง
 
 ```
 cat -
@@ -105,7 +105,7 @@ cat spaces\ in\ this\ filename
 
 <figure><img src="https://lh3.googleusercontent.com/tc96ZxP99lMSrUKIUvUmDIkzoqR2xet9EsnMVZ-gLsqguPYGNtD3BEcZ5OEJxe2VrytYUvL4vMemwqSV3F82eMWb5xksySArdvurWKBdj9eufA-QNt2ze2D_y1SeTBKZibMed5xVIFOYj_VPAzmkiqr-ADqWIudGXJKeFfuV8kvjf_O3zPNgUULsOA" alt=""><figcaption></figcaption></figure>
 
-## ****:triangular\_flag\_on\_post: Level 5-6
+## :triangular\_flag\_on\_post: Level 5-6
 
 > **Password : lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR**
 
@@ -191,7 +191,7 @@ strings data.txt | grep =
 
 <figure><img src="https://lh6.googleusercontent.com/ghIhsJI16q0CwDZTq1D0O19zA3NIzl-0KrxDyi5cAAPYMiZkov2e5i0WAP5CrcqV8C8i0gUc0VibdR_P90HbaOtd7x5has6VTC1g8zz0eP370O4TLub6uToARvlU0AoaGiZtEMBqKDpkeYx55rbyfubChdTnHqs42jbF7CRhZEumfYxaFHfiOiJSog" alt=""><figcaption></figcaption></figure>
 
-ให้เราทำการ decode มันออกมา ด้วยคำสั่ง &#x20;
+ให้เราทำการ decode มันออกมา ด้วยคำสั่ง
 
 ```
 cat data.txt | base64 --decode
@@ -203,7 +203,7 @@ cat data.txt | base64 --decode
 
 > **Password : 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM**
 
-เมื่อเรา cat file data.txt จะเจอ strings ที่ encode ด้วยrot13&#x20;
+เมื่อเรา cat file data.txt จะเจอ strings ที่ encode ด้วยrot13
 
 <figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
@@ -215,13 +215,11 @@ cat data.txt | tr '[a-z][A-Z]' '[n-za-m][N-ZA-M]'
 
 <figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-
-
 ## :triangular\_flag\_on\_post: Level 12-13
 
 > **Password : JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv**
 
-ในข้อนี้  data.txt ที่เขาให้มาเป็นเป็นไฟล์ hexdump ซึ่งเราจะต้อง reverse มันออกมา&#x20;
+ในข้อนี้ data.txt ที่เขาให้มาเป็นเป็นไฟล์ hexdump ซึ่งเราจะต้อง reverse มันออกมา
 
 ```
 xxd -r data.txt > data1
@@ -263,11 +261,11 @@ bzip2 -d data1
 tar -xvf data3
 ```
 
-เมื่อใช้คำสั่ง file ดู file data5.bin พบว่าเป็นไฟล์ tar เหมือนกัน ดังนั้นก็ใช้คำสั่งเดิมในการแตกไฟล์มันออกมา ก็จะได้ไฟล์ data6.bin หลังจากนั้นใช้คำสั่ง file เพื่อดูว่าfile data6.bin คือ file อะไร ซึ่งคำตอบก็ไฟล์ bzip นั่นเอง&#x20;
+เมื่อใช้คำสั่ง file ดู file data5.bin พบว่าเป็นไฟล์ tar เหมือนกัน ดังนั้นก็ใช้คำสั่งเดิมในการแตกไฟล์มันออกมา ก็จะได้ไฟล์ data6.bin หลังจากนั้นใช้คำสั่ง file เพื่อดูว่าfile data6.bin คือ file อะไร ซึ่งคำตอบก็ไฟล์ bzip นั่นเอง
 
 <figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-เมื่อแตกไฟล์ data6 ออกมา ก็จะได้ ไฟล์ data6 ที่เป็น .tar ให้แตกไฟล์ data6.tar ก็จะได้ data8.bin ซึ่งจริงๆมันคือfile gzip&#x20;
+เมื่อแตกไฟล์ data6 ออกมา ก็จะได้ ไฟล์ data6 ที่เป็น .tar ให้แตกไฟล์ data6.tar ก็จะได้ data8.bin ซึ่งจริงๆมันคือfile gzip
 
 <figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
@@ -301,17 +299,17 @@ tar -xvf data3
 scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .
 ```
 
-หลังจากนั้นให้เราทำการ login ด้วย bandit14 แล้วใช้ key เมื่อกี้แทน password&#x20;
+หลังจากนั้นให้เราทำการ login ด้วย bandit14 แล้วใช้ key เมื่อกี้แทน password
 
 ```
 ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
 ```
 
-จะเห็นว่ามันเข้าไม่ได้ เพราะ permission ของ key ตัวนี้มัน open เกินไป&#x20;
+จะเห็นว่ามันเข้าไม่ได้ เพราะ permission ของ key ตัวนี้มัน open เกินไป
 
 <figure><img src=".gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-ให้เราแก้ไข permission โดยในที่นี้จะใช้เป็น 600 ด้วยคำสั่ง&#x20;
+ให้เราแก้ไข permission โดยในที่นี้จะใช้เป็น 600 ด้วยคำสั่ง
 
 ```
 chmod 600 sshkey.private
@@ -343,7 +341,7 @@ nc localhost 30000
 
 > Password : jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
 
-password อยู่ใน localhost:30001 ให้เราเข้าผ่าน SSL&#x20;
+password อยู่ใน localhost:30001 ให้เราเข้าผ่าน SSL
 
 ```
 openssl s_client -connect localhost:30001 -quiet
@@ -352,6 +350,3 @@ openssl s_client -connect localhost:30001 -quiet
 เมื่อเข้าแล้วก็จะเจอ password เลย
 
 <figure><img src=".gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
-
-
-
